@@ -1,0 +1,4 @@
+english:original
+japanese:translation
+simplify:true
+path:D:\Music\TH\同人曲\TFMC\Touhou Fanmade Music Collection 1
