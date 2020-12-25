@@ -8,13 +8,13 @@ headers = {
 gojuoon =  r'あアいイうウえエおオかカきキくクけケこコさサしシすスせセそソたタちチつツてテとトなナにニぬヌねネのノはハひヒふフへヘほホまマみミむムめメもモやヤゆユよヨらラりリるルれレろロわワをヲんン'
 
 def sreq(url, timeout):
-    for i in range(100):
+    for i in range(10):
         try:
             response = requests.get(url, headers = headers, timeout = timeout)
             return response
         except:
             pass
-    raise Exception('timeout for 100 times')
+    return '{}'
 
 def simplify(s):
     res = ''

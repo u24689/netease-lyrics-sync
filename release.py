@@ -11,13 +11,13 @@ headers = {
 gojuoon =  r'あアいイうウえエおオかカきキくクけケこコさサしシすスせセそソたタちチつツてテとトなナにニぬヌねネのノはハひヒふフへヘほホまマみミむムめメもモやヤゆユよヨらラりリるルれレろロわワをヲんン'
 
 def sreq(url, timeout):
-    for i in range(100):
+    for i in range(10):
         try:
             response = requests.get(url, headers = headers, timeout = timeout)
             return response
         except:
             pass
-    raise Exception('timeout for 100 times')
+    return '{}'
 
 def simplify(s):
     res = ''
@@ -77,7 +77,12 @@ class SongSearcher:
     @staticmethod
     def get_first_result(name):
         url = SongSearcher.base_url.format(name)
-        res = json.loads(sreq(url, 2000).content)['result']['songs']
+        res = ''
+        try:
+            res = json.loads(sreq(url, 2000).content)['result']['songs']
+        except:
+            print('error: ' + res)
+        
         if len(res) == 0:
             return 0
         return res[0]['id']
@@ -126,6 +131,7 @@ else:
         print('now at ' + p)
         os.chdir(p)
         for i in os.listdir():
+            print('now at ' + i)
             pd = p + '\\' + i
             if os.path.isfile(i):
                 proc(i)

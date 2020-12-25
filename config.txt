@@ -1,5 +1,5 @@
 english:original
 japanese:translation
 simplify:true
-path:D:\Music
+path:F:\MUSIC\Chris
 scan-subdir:true
