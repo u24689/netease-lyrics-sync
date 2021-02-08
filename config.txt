@@ -1,5 +1,5 @@
 english:original
 japanese:sync
 simplify:true
-path:D:\Music\Chris
+path:D:\Music\CloudMusic
 scan-subdir:true
